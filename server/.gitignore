@@ -1,0 +1,4 @@
+node_modules
+.env
+login_res.json
+register_res.json
