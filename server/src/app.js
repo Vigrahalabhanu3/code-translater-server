@@ -14,6 +14,11 @@ app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
 // Convert incoming JSON requests to JavaScript objects
 app.use(express.json());
 
+// Health check / Welcome route
+app.get("/", (req, res) => {
+  res.status(200).json({ success: true, message: "Welcome! The Code Translator API is live and running." });
+});
+
 // Mount all API routes under /api
 app.use("/api", routes);
 
